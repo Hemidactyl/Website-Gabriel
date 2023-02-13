@@ -1,0 +1,9 @@
+#static images
+/homepage/static/homepage/imgs
+
+#from utilities - my own written texts
+/utilities/txt-to-html/converted
+/utilities/txt-to-html/to-convert
+
+#pycache
+__pycache__/

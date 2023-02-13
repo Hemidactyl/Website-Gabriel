@@ -1,0 +1,54 @@
+<!--
+  This one is a bit wonky. It has a working carousel, but portrait images don't render the way I would like them to.
+-->
+
+
+{% extends 'media/media_base.html' %}
+
+{% load pictures %}
+
+{% block content %}
+    <main class="mb-5" style="height: 100vh">
+        <a name="top"></a>
+        <div class="container text-center h-100">
+            
+            <div id="myCarousel" class="carousel slide" data-interval="false">
+                <div class="carousel-inner">
+                {% for picture in album.picture_set.all %}
+                 {% if picture == album.preview %}
+                  <div class="carousel-item active">
+                    <img src="{% img_url picture.picture file_type="webp" width=2200 %}" class="img-fluid" alt="{{ picture.title }}">
+                    {{ picture.title }} by <a href="{{ picture.author.website }}">{{ picture.author }}</a>
+                  </div>
+                  {% else %}
+                  <div class="carousel-item">
+                    <img src="{% img_url picture.picture file_type="webp" width=2200 %}" class="img-fluid" alt="{{ picture.title }}">
+                    {{ picture.title }} by <a href="{{ picture.author.website }}">{{ picture.author }}</a>
+                  </div>
+                  {% endif %}
+                {% endfor %}
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+
+
+            
+        </div>
+    </main>
+{% endblock  %}
+
+{% block script %}
+<script>
+    const myCarouselElement = document.querySelector('#myCarousel')
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+      interval: 2000,
+      wrap: true
+    })
+</script>
+{% endblock  %}

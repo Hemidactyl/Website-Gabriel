@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block styles %}
+  body {
+    background: url('{% static 'homepage/imgs/pk_gerlev_kong.jpg' %}') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  }
+{% endblock  %}
+
+{% block header %}
+  <header class="navbar mb-auto sticky-top">
+{% endblock  %}
+
+{% block content %}
+
+  <main class="px-3 text-center">
+    <div class="cover-container w-100 m-auto">
+      <div class="p-2" style="background-color: rgb(219, 219, 219, 0.7);">
+        <h1>Welcome to my site.</h1>
+          <p class="lead fw-normal">It is a place for me to store some memories and creations, both artistic and professional. And for you, if you wish, to get to know me a little.</p>
+          <p class="lead">
+            <a href="{% url 'blog' %}" class="btn btn-lg btn-outline-dark fw-bold">Writing</a>
+            <a href="{% url 'gallery' %}" class="btn btn-lg btn-outline-dark fw-bold">Gallery</a>
+            <a href="{% url 'about' %}" class="btn btn-lg btn-outline-dark fw-bold">Portfolio</a>
+          </p>
+          <p>(Work in progress.)</p>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}

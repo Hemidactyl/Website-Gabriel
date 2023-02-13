@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %} 
+
+<!-- Portfolio card. Disappears below medium. -->
+<div class="card mb-3 d-none d-md-block">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <img src="{% static 'homepage/imgs/ima_preview_1.jpg'  %}" class="img-fluid card-img-start" alt="IMA image">
+      </div>
+      <div class="col-md-4">
+        <div class="card-body">
+          <h5 class="card-title">Portfolio</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Pretty cool, huh?</small></p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Replaces large (and bigger) portfolio card when on medium or lower -->
+<div class="card mb-3 d-block d-md-none">
+  <img src="{% static 'homepage/imgs/ima_preview_1.jpg'  %}" class="card-img-top" alt="IMA image">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+</div>
+
+<!-- Writing (blog) preview card -->
+<div class="card mb-3">
+    <div class="row flex-row-reverse g-0">
+      <div class="col-md-8">
+        <img src="{% static 'homepage/imgs/writing01.jpg'  %}" class="img-fluid" alt="Writing">
+      </div>
+      <div class="col-md-4">
+        <div class="card-body">
+          <h5 class="card-title">Writing</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <a href="{% url 'blog' %}" class="btn btn-light stretched-link">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Gallery preview card -->
+<div class="card mb-3 d-none d-md-block">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <img src="{% static 'homepage/imgs/pk_gerlev_kong.jpg'  %}" class="img-fluid" alt="Gallery">
+      </div>
+      <div class="col-md-4">
+        <div class="card-body">
+          <h5 class="card-title">Gallery</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Pics and vids for the peeps!</small></p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="card mb-3 d-block d-md-none">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+  <img src="{% static 'homepage/imgs/pk_gerlev_kong.jpg'  %}" class="card-img-bottom" alt="Gallery">
+</div>
+
+
+
+{% endblock %}

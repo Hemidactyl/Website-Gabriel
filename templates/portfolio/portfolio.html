@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block links %}
+    <a class="nav-link fw-bold pb-1 px-0" href="{% url 'blog' %}">Writing</a>
+    <a class="nav-link fw-bold pb-1 px-0" href="{% url 'gallery' %}">Gallery</a>
+    <a class="nav-link fw-bold pb-1 px-0 active" href="{% url 'portfolio' %}">Portfolio</a>
+    <a class="nav-link fw-bold pb-1 px-0" href="{% url 'about' %}">About</a>
+{% endblock  %}
+
+{% block content %}
+<main class="mb-5 mx-3 d-flex justify-content-center">
+    An exciting portfolio to come.
+</main>
+{% endblock  %}

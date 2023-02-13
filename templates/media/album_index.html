@@ -1,0 +1,32 @@
+{% extends 'media/media_base.html' %}
+
+{% load pictures %}
+
+{% block styles %}
+
+{% endblock  %}
+
+{% block content %}
+    <main class="mb-5">
+        <div class="container">
+            <div class="row g-1">
+                {% for album in album_list %}
+                    <div class="col-sm-6 col-lg-4">
+                        <a href="{% url 'album_detail' album.slug %}">
+                            <div class="img-box">
+                            
+                                <img src="{% img_url album.preview.picture file_type="webp" width=600 %}" class="image" alt="placeholder">
+                            
+                                <div class="overlay">
+                                    <h4 class="overlay-text">
+                                        {{ album.title | upper }}
+                                    </h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}       
+            </div>
+        </div>
+    </main>
+{% endblock  %}

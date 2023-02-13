@@ -1,0 +1,33 @@
+{% extends 'media/media_base.html' %}
+
+{% load pictures %}
+
+{% block styles %}
+
+.weird-div {
+  max-width: 100vw;
+  width: auto;
+  height: auto;
+  margin: 0.2em;
+}
+
+{% endblock  %}
+
+{% block content %}
+    <main class="mb-5 d-flex justify-content-center">
+      <div class="container-fluid">
+      
+          {% for picture in album.picture_set.all %}
+            <div class="weird-div">
+              <img src="{% img_url picture.picture file_type="webp" width=2200 %}" class="img-fluid" alt="{{ picture.title }}">
+            </div>
+
+            {# {% picture picture.picture img_alt="{{ picture.title }}" img_loading="lazy"%} #} 
+
+          
+
+          {% endfor %}
+
+      </div>
+    </main>
+{% endblock  %}

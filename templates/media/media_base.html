@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block links %}
+    <a class="nav-link fw-bold pb-1 px-0" href="{% url 'blog' %}">Writing</a>
+    <a class="nav-link fw-bold pb-1 px-0 active" href="{% url 'gallery' %}">Gallery</a>
+    <a class="nav-link fw-bold pb-1 px-0" href="{% url 'portfolio' %}">Portfolio</a>
+    <a class="nav-link fw-bold pb-1 px-0" href="{% url 'about' %}">About</a>
+{% endblock  %}

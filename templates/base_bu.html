@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        {% load django_bootstrap5 %}
+
+        {% bootstrap_css %}
+
+        {% bootstrap_javascript %}
+
+        {% bootstrap_messages %}
+    
+        <title>Gabriel Harangi</title>
+         
+
+    </head>
+
+    <body class="bg-light">
+
+      <!-- Navigation -->
+          <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light bg-gradient">
+              <div class="container">
+                  <a class="navbar-brand p-2" href="{% url 'home' %}">Gabriel Harangi</a>
+                  <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarResponsive">
+                      <ul class="nav navbar-nav ms-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Gallery</a>
+                        </li>
+                      </ul>
+                    </div>
+              </div>
+          </nav>
+
+          <main class="container">
+            <div class="row">
+
+              <!-- left sidebar here, to disappear when we go below large -->
+              <div class="col-lg-2 d-none d-lg-block">
+              </div>
+
+              <!-- main content here in a middle column -->
+              <div class="col-lg-8 col-md-12">
+                {% block content %}
+
+                {% endblock content %}
+              </div>
+              <!-- right sidebar, to disappear when we go below large -->
+              <div class="col-lg-2 d-none d-lg-block">
+              </div>
+            </div>
+          </main>
+    </body>
+</html>

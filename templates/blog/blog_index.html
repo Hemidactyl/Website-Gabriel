@@ -1,0 +1,29 @@
+{% extends "blog/blog_base.html" %}
+
+{% load pictures %}
+
+
+{% block content %}
+  <main class="mb-5 mx-3 d-flex justify-content-center">
+      <div class="cover-container">    
+        <div class="row g-2">
+            {% for post in post_list %}
+                <div class="col-sm-6">
+                    <div class="card">
+                        <img src="{% img_url post.art file_type="webp" width=2200 %}" class="img-fluid card-img-top" alt="{{ post.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="card-text">{{ post.content|safe|slice:":180" }}...</p>
+                            
+                            <div class="d-flex justify-content-end">
+                                <a href="{% url 'post_detail' post.slug %}" class="btn btn-outline-dark stretched-link">...continue reading</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+      </div>
+    </main>
+{% endblock %}

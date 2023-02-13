@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    {% load django_bootstrap5 %}
+
+    {% bootstrap_css %}
+
+    {% bootstrap_javascript %}
+
+    {% bootstrap_messages %}
+
+    {% load static %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Gabriel Harangi">
+    
+    <link href="{% static 'homepage/css/base_styles.css' %}" rel="stylesheet">
+
+    <title>Gabriel Harangi</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'homepage/favicon/favicon.ico' %}">
+
+    <style>
+      {% block styles %}
+      
+      {% endblock  %}
+    </style>
+    
+    <body class="d-flex flex-column text-bg-light">
+      <a name="top"></a>
+
+      {% block header %}
+        <header class="navbar mb-auto sticky-top bg-light">
+      {% endblock  %}
+          <div class="cover-container w-100 m-auto">
+            <nav class="nav nav-masthead float-md-start justify-content-center">
+              <a href=" {% url 'home' %} " class="nav-link py-1 px-0 fw-bold fs-5">Gabriel Harangi</a>
+            </nav>
+
+            <nav class="nav nav-masthead justify-content-center float-md-end">
+              {% block links %}
+                <a class="nav-link fw-bold pb-1 px-0" href="{% url 'blog' %}">Writing</a>
+                <a class="nav-link fw-bold pb-1 px-0" href="{% url 'gallery' %}">Gallery</a>
+                <a class="nav-link fw-bold pb-1 px-0" href="{% url 'portfolio' %}">Portfolio</a>
+                <a class="nav-link fw-bold pb-1 px-0" href="{% url 'about' %}">About</a>
+              {% endblock  %}
+            </nav>
+          </div>
+        </header>
+
+      
+      
+      <!-- Main content here -->
+      {% block content %}
+        
+      {% endblock  %}
+        
+      
+
+        <footer class="text-gray-50 text-center mt-auto">
+          <div class="cover-container m-auto">
+            <p>Backend by <a href="https://djangoproject.com/" class="text-black">Django</a>, frontend by <a href="https://getbootstrap.com/" class="text-black">Bootstrap</a>.</p>
+          </div>
+        </footer>
+
+      {% block script %}
+      
+      {% endblock  %}
+
+    </body>
+
+  </html>
