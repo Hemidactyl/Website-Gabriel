@@ -3,7 +3,20 @@
 {% load pictures %}
 
 {% block content %}
-    <main class="mb-5">
+    <main class="mb-3 mx-3 flex-grow-1 d-flex flex-column align-items-center">
+
+        <div class="cover-container">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container px-0">
+                  <h1 class="display-4">Photography.</h1>
+                  <p class="lead">
+                    Mostly my own. There are a few pictures, however, taken by others. All carry good memories.
+                  </p>
+                </div>
+              </div>
+        </div>
+
+
         <div class="container">
             <div class="row g-1">
                 {% for album in album_list %}
@@ -14,9 +27,14 @@
                                 <img src="{% img_url album.preview.picture file_type="webp" width=600 %}" class="image" alt="placeholder">
                             
                                 <div class="overlay">
-                                    <h4 class="overlay-text">
-                                        {{ album.title | upper }}
-                                    </h4>
+                                    <div class="overlay-text">
+                                        <h5>
+                                            {{ album.title | upper }}
+                                        </h5>
+                                        <p class="fs-6">
+                                            {{ album.description }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </a>

@@ -21,17 +21,17 @@
     <title>Gabriel Harangi</title>
     <link rel="icon" type="image/x-icon" href="{% static 'homepage/favicon/favicon.ico' %}">
 
+    <!-- For now, adding this block - a few templates have a little bit of their own styles.
+    Will move into external stylesheets when finalized -->
     {% block style %}
 
     {% endblock %}
 
     <body class="d-flex flex-column text-bg-light">
-      <a name="top"></a>
-
       {% block header %}
-        <header class="navbar mb-auto sticky-top bg-light">
+        <header class="navbar sticky-top bg-light">
       {% endblock  %}
-          <div class="cover-container w-100 m-auto">
+          <div class="cover-container w-100 mx-auto">
             <nav class="nav nav-masthead float-md-start justify-content-center">
               <a href=" {% url 'home' %} " class="nav-link py-1 px-0 fw-bold fs-5">Gabriel Harangi</a>
             </nav>
@@ -56,9 +56,9 @@
         
       
 
-        <footer class="text-gray-50 text-center mt-auto">
-          <div class="cover-container m-auto">
-            <p>Backend by <a href="https://djangoproject.com/" class="text-black">Django</a>, frontend by <a href="https://getbootstrap.com/" class="text-black">Bootstrap</a>.</p>
+        <footer>
+          <div class="cover-container mx-auto text-black-50 text-center">
+            <p>Backend by <a href="https://djangoproject.com/" class="link-dark">Django</a>, frontend by <a href="https://getbootstrap.com/" class="link-dark">Bootstrap</a>.</p>
           </div>
         </footer>
 
