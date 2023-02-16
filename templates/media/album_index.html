@@ -2,12 +2,18 @@
 
 {% load pictures %}
 
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'media/css/album_index_styles.css' %}" rel="stylesheet">
+{% endblock  %}
+
 {% block content %}
     <main class="mb-3 mx-3 flex-grow-1 d-flex flex-column align-items-center">
 
         <div class="cover-container">
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container px-0">
+            <div class="jumbotron jumbotron-fluid bg-light rounded-3">
+                <div class="container p-3 mb-3">
                   <h1 class="display-4">Photography.</h1>
                   <p class="lead">
                     Mostly my own. There are a few pictures, however, taken by others. All carry good memories.
@@ -17,7 +23,7 @@
         </div>
 
 
-        <div class="container">
+        <div class="container p-0">
             <div class="row g-1">
                 {% for album in album_list %}
                     <div class="col-sm-6 col-lg-4">

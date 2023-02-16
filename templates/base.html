@@ -26,46 +26,47 @@
     {% block style %}
 
     {% endblock %}
+  </head>
 
-    <body class="d-flex flex-column text-bg-light">
-      {% block header %}
-        <header class="navbar sticky-top bg-light">
-      {% endblock  %}
-          <div class="cover-container w-100 mx-auto">
-            <nav class="nav nav-masthead float-md-start justify-content-center">
-              <a href=" {% url 'home' %} " class="nav-link py-1 px-0 fw-bold fs-5">Gabriel Harangi</a>
-            </nav>
+  <body class="d-flex flex-column">
+    {% block header %}
+      <header class="navbar">
+    {% endblock  %}
+        <div class="cover-container w-100 mx-auto">
+          <nav class="nav nav-masthead float-md-start justify-content-center">
+            <a href=" {% url 'home' %} " class="nav-link py-1 px-0 fw-bold fs-5">Gabriel Harangi</a>
+          </nav>
 
-            <nav class="nav nav-masthead justify-content-center float-md-end">
-              {% block links %}
-                <a class="nav-link fw-bold pb-1 px-0" href="{% url 'blog' %}">Writing</a>
-                <a class="nav-link fw-bold pb-1 px-0" href="{% url 'gallery' %}">Gallery</a>
-                <a class="nav-link fw-bold pb-1 px-0" href="{% url 'portfolio' %}">Portfolio</a>
-                <a class="nav-link fw-bold pb-1 px-0" href="{% url 'about' %}">About</a>
-              {% endblock  %}
-            </nav>
-          </div>
-        </header>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            {% block links %}
+              <a class="nav-link fw-bold pb-1 px-0" href="{% url 'blog' %}">Writing</a>
+              <a class="nav-link fw-bold pb-1 px-0" href="{% url 'gallery' %}">Gallery</a>
+              <a class="nav-link fw-bold pb-1 px-0" href="{% url 'portfolio' %}">Portfolio</a>
+              <a class="nav-link fw-bold pb-1 px-0" href="{% url 'about' %}">About</a>
+            {% endblock  %}
+          </nav>
+        </div>
+      </header>
 
+    
+    
+    <!-- Main content here -->
+    {% block content %}
       
+    {% endblock  %}
       
-      <!-- Main content here -->
-      {% block content %}
-        
-      {% endblock  %}
-        
-      
+    
 
-        <footer>
-          <div class="cover-container mx-auto text-black-50 text-center">
-            <p>Backend by <a href="https://djangoproject.com/" class="link-dark">Django</a>, frontend by <a href="https://getbootstrap.com/" class="link-dark">Bootstrap</a>.</p>
-          </div>
-        </footer>
+      <footer>
+        <div class="cover-container mx-auto text-black-50 text-center">
+          <p>Backend by <a href="https://djangoproject.com/" class="link-dark">Django</a>, frontend by <a href="https://getbootstrap.com/" class="link-dark">Bootstrap</a>.</p>
+        </div>
+      </footer>
 
-      {% block script %}
-      
-      {% endblock  %}
+    {% block script %}
+    
+    {% endblock  %}
 
-    </body>
+  </body>
 
-  </html>
+</html>

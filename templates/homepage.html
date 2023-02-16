@@ -1,41 +1,71 @@
-{% extends "base.html" %}
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    {% load django_bootstrap5 %}
 
-{% load static %}
+    {% bootstrap_css %}
 
-{% block style %}
-<style>
+    {% bootstrap_javascript %}
 
-body {
-  background: url('{% static 'homepage/imgs/pk_gerlev_kong.jpg' %}') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-}
+    {% bootstrap_messages %}
 
-</style>
-{% endblock %}
+    {% load static %}
 
-{% block header %}
-  <header class="navbar sticky-top">
-{% endblock  %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Gabriel Harangi">
+    
+    <link href="{% static 'homepage/css/homepage_styles.css' %}" rel="stylesheet">
 
-{% block content %}
+    <title>Gabriel Harangi</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'homepage/favicon/favicon.ico' %}">
+
+  <style>
+    body {
+      background: url('{% static 'homepage/imgs/IMA_bw.jpg' %}') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      -o-background-size: cover;
+      box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+    }
+  </style>
+
+</head>
+
+<body class="d-flex flex-column text-bg-dark">
+    <header class="navbar">
+      <div class="cover-container w-100 mx-auto">
+        <nav class="nav nav-masthead float-md-start justify-content-center">
+          <a href=" {% url 'home' %} " class="nav-link py-1 px-0 fw-bold fs-5">Gabriel Harangi</a>
+        </nav>
+
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link fw-bold pb-1 px-0" href="{% url 'blog' %}">Writing</a>
+            <a class="nav-link fw-bold pb-1 px-0" href="{% url 'gallery' %}">Gallery</a>
+            <a class="nav-link fw-bold pb-1 px-0" href="{% url 'portfolio' %}">Portfolio</a>
+            <a class="nav-link fw-bold pb-1 px-0" href="{% url 'about' %}">About</a>
+        </nav>
+      </div>
+    </header>
 
   <main class="px-3 my-auto text-center">
     <div class="cover-container w-100 m-auto">
-      <div class="p-2 rounded" style="background-color: rgb(219, 219, 219, 0.7);">
-        <h1>Welcome to my site.</h1>
-          <p class="lead fw-normal">It is a place for me to store some memories and creations, both artistic and professional. And for you, if you wish, to get to know me a little.</p>
+      <div class="p-2 rounded">
+        <!--  style="background-color: rgb(219, 219, 219, 0.7); -->
+        <h1 class="display-4">Welcome to my site.</h1>
+          <p class="lead">It is a place for me to store some memories and creations, both artistic and professional. And for you, if you wish, to get to know me a little.</p>
           <p class="lead">
-            <a href="{% url 'blog' %}" class="btn btn-lg btn-outline-dark fw-bold">Writing</a>
-            <a href="{% url 'gallery' %}" class="btn btn-lg btn-outline-dark fw-bold">Gallery</a>
-            <a href="{% url 'about' %}" class="btn btn-lg btn-outline-dark fw-bold">Portfolio</a>
+            <a href="{% url 'blog' %}" class="btn btn-lg btn-outline-light fw-bold">Writing</a>
+            <a href="{% url 'gallery' %}" class="btn btn-lg btn-outline-light fw-bold">Gallery</a>
+            <a href="{% url 'about' %}" class="btn btn-lg btn-outline-light fw-bold">Portfolio</a>
           </p>
-          <p>(Work in progress.)</p>
+          <p class="lead">(Work in progress.)</p>
       </div>
     </div>
   </main>
 
-{% endblock %}
+</body>
+
+</html>
