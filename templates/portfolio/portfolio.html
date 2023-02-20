@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block links %}
     <a class="nav-link fw-bold pb-1 px-0" href="{% url 'blog' %}">Writing</a>
     <a class="nav-link fw-bold pb-1 px-0" href="{% url 'gallery' %}">Gallery</a>
@@ -8,9 +10,35 @@
 {% endblock  %}
 
 {% block content %}
-<main class="mb-3 flex-grow-1 mx-3 d-flex flex-column text-center">
-    <div class="lead my-auto">    
-        An exciting portfolio to come.
+<main class="mb-3 flex-grow-1 mx-3 d-flex flex-column align-items-center">
+    
+    <div class="cover-container">
+    
+        <div class="card text-white">
+            <img src="{% static 'homepage/imgs/ima_preview_1.jpg' %}" class="card-img" alt="IMA1">
+            <div class="card-img-overlay">
+                <h5 class="card-title">In Motion Academy</h5>
+                <p class="card-text">
+                    Yeah I built a nice gym! And this is just some filler text to see how it will look in action. I can't say I like it very much, yet.
+                </p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-7">
+                <img src="{% static 'homepage/imgs/ima_preview_1.jpg' %}" class="img-fluid" alt="IMAcademy">
+              </div>
+              <div class="col-md-5">
+                <div class="card-body">
+                  <h5 class="card-title">In Motion Academy</h5>
+                  <p class="card-text">Who knows, maybe this will look much nicer. I guess it might, as I don't really plan to crop the images. Hmm. Hmm indeed.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    
     </div>
+
 </main>
 {% endblock  %}
